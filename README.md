@@ -1,4 +1,5 @@
 # nginx-docker
+[![](https://imagelayers.io/badge/monder/nginx-docker:latest.svg)](https://imagelayers.io/?images=monder/nginx-docker:latest 'Get your own badge on imagelayers.io')
 
 Docker image with nginx and confd with remote config loading support.
 
