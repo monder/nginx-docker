@@ -56,14 +56,10 @@ RUN apt-get update \
 	&& apt-get -y remove build-essential && apt-get -y autoremove \
 	&& apt-get clean && rm -rf /var/cache/apt/* /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+RUN mkdir -p /etc/confd/conf.d /etc/service/nginx /etc/service/confd
+
 ADD confd /usr/bin/confd
-
-RUN mkdir /etc/service/nginx
 ADD nginx.sh /etc/service/nginx/run
-
-RUN mkdir /etc/service/confd
 ADD confd.sh /etc/service/confd/run
-
-RUN mkdir -p /etc/confd/conf.d
 ADD nginx.toml /etc/confd/conf.d/nginx.toml
 
